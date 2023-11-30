@@ -1,0 +1,158 @@
+hola mundo expediente usuario
+
+usermod -aG sudo sammy
+usermod -aG sudo md3admin
+
+password DelSarmiento.171
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04-es
+
+sudo mkdir -p /var/www/your_domain/html
+sudo mkdir -p /var/www/expediente.pro/html
+
+sudo mkdir -p /var/www/ipi.saiterp.com/html
+sudo mkdir -p /var/www/morelos.saiterp.com/html
+
+sudo mkdir -p /var/www/dinamica.capacitacion.app/html
+
+
+
+sudo chown -R $USER:$USER /var/www/your_domain/html
+sudo chown -R $USER:$USER /var/www/expediente.pro/html
+
+sudo chown -R $USER:$USER /var/www/dinamica.capacitacion.app/html
+
+
+sudo chown -R $USER:$USER /var/www/ipi.saiterp.com/html
+sudo chown -R $USER:$USER /var/www/morelos.saiterp.com/html
+
+
+
+sudo chmod -R 755 /var/www/your_domain
+sudo chmod -R 755 /var/www/expediente.pro 
+
+sudo chmod -R 755 /var/www/dinamica.capacitacion.app
+
+sudo chmod -R 755 /var/www/ipi.saiterp.com
+sudo chmod -R 755 /var/www/morelos.saiterp.com 
+
+
+
+
+nano /var/www/your_domain/html/index.html
+nano /var/www/expediente.pro/html/index.html
+
+nano /var/www/ipi.saiterp.com/html/index.html
+nano /var/www/morelos.saiterp.com/html/index.html
+
+
+nano /var/www/dinamica.capacitacion.app/html/index.html
+
+
+<html>
+    <head>
+        <title>Welcome to morelos.saiterp.com!</title>
+    </head>
+    <body>
+        <h1>Success!  El servidor del morelos.saiterp.com server block is working!</h1>
+    </body>
+</html>
+
+
+sudo nano /etc/nginx/sites-available/your_domain
+sudo nano /etc/nginx/sites-available/expediente.pro
+
+sudo nano /etc/nginx/sites-available/ipi.saiterp.com
+sudo nano /etc/nginx/sites-available/morelos.saiterp.com
+
+
+sudo nano /etc/nginx/sites-available/dinamica.capacitacion.app
+
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/morelos.saiterp.com/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name morelos.saiterp.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+
+sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+
+
+sudo ln -s /etc/nginx/sites-available/ipi.saiterp.com /etc/nginx/sites-enabled/
+
+sudo ln -s /etc/nginx/sites-available/morelos.saiterp.com /etc/nginx/sites-enabled/
+
+
+sudo ln -s /etc/nginx/sites-available/expediente.pro /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/dinamica.capacitacion.app /etc/nginx/sites-enabled/
+
+
+lets ecrypt 
+
+sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d expediente.pro -d www.expediente.pro
+
+sudo certbot --nginx -d dinamica.capacitacion.app
+
+sudo certbot --nginx -d ipi.saiterp.com
+sudo certbot --nginx -d morelos.saiterp.com
+
+
+
+
+ /etc/letsencrypt/live/soportesait.com/fullchain.pem (failure)
+cd
+
+
+
+Como usuarios de Linux. 
+
+md3admin 
+DelSarmiento.171 
+
+
+usermod -aG sudo md3admin
+ 
+ 
+
+MYSQL
+
+RENAME USER 'sammy'@'localhost' TO 'sammy'@'remote_server_ip';
+
+RENAME USER 'md3admin'@'localhost' TO 'md3admin'@'143.198.136.127';
+
+
+CREATE USER 'sammy'@'remote_server_ip' IDENTIFIED BY 'password';
+
+CREATE USER 'md3admin'@'143.198.136.127' IDENTIFIED BY 'DelSarmiento.171';
+
+
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'md3admin'@'143.198.136.127' WITH GRANT OPTION;
+
+sudo ufw allow 3306
+
+192.168.1.6
+
+187.162.158.190
+
+CREATE USER 'root'@'ip_address' IDENTIFIED BY 'some_pass';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
+
+CREATE USER 'root'@'187.162.158.190' IDENTIFIED BY 'DelSarmiento.171';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'187.162.158.190';
+
+CREATE USER 'md3admin'@'187.162.158.190' IDENTIFIED BY 'DelSarmiento.171';
+GRANT ALL PRIVILEGES ON *.* TO 'md3admin'@'187.162.158.190';
+
+
+

@@ -1,5 +1,9 @@
-import enUS from './en-US'
+import en from './en.json'
+import es from './es.json'
 
-export default {
-  'en-US': enUS
+export const defaultLocale = 'es'
+
+export const languages = {
+  en: en,
+  es: es,
 }
